@@ -25,51 +25,70 @@ public class OTPService {
 
 	private static final String OTP_PREFIX = "otp:";
 
+//	public String generateOTP(String email) {
+//		String otp = generateRandomOTP();
+//
+//		// Store OTP in Redis with expiration
+//		String key = OTP_PREFIX + email;
+//		redisTemplate.opsForValue().set(key, otp, otpExpiryMinutes, TimeUnit.MINUTES);
+//
+//		// Send OTP via email
+//		// emailService.sendOTPEmail(email, otp); // ⛔ Disable email on Railway
+//		System.out.println("OTP (TEMPORARY DEV MODE): " + otp);
+//
+//		System.out.println("=== OTP GENERATED ===");
+//		System.out.println("Email: " + email);
+//		System.out.println("OTP: " + otp);
+//		System.out.println("Key: " + key);
+//		System.out.println("Expiry: " + otpExpiryMinutes + " minutes");
+//
+//		return otp;
+//	}pk
+	
+	//pk remove latter
 	public String generateOTP(String email) {
-		String otp = generateRandomOTP();
+	    String otp = "123456"; // 🔥 STATIC OTP FOR DEVELOPMENT
 
-		// Store OTP in Redis with expiration
-		String key = OTP_PREFIX + email;
-		redisTemplate.opsForValue().set(key, otp, otpExpiryMinutes, TimeUnit.MINUTES);
+	    System.out.println("=== OTP GENERATED (DEV MODE) ===");
+	    System.out.println("Email: " + email);
+	    System.out.println("OTP: " + otp);
 
-		// Send OTP via email
-		// emailService.sendOTPEmail(email, otp); // ⛔ Disable email on Railway
-		System.out.println("OTP (TEMPORARY DEV MODE): " + otp);
-
-		System.out.println("=== OTP GENERATED ===");
-		System.out.println("Email: " + email);
-		System.out.println("OTP: " + otp);
-		System.out.println("Key: " + key);
-		System.out.println("Expiry: " + otpExpiryMinutes + " minutes");
-
-		return otp;
+	    return otp;
 	}
+//pk
 
+//	public boolean validateOTP(String email, String otp) {
+//		String key = OTP_PREFIX + email;
+//		String storedOTP = redisTemplate.opsForValue().get(key);
+//
+//		System.out.println("=== OTP VALIDATION ===");
+//		System.out.println("Email: " + email);
+//		System.out.println("Input OTP: " + otp);
+//		System.out.println("Stored OTP: " + storedOTP);
+//		System.out.println("Key: " + key);
+//
+//		if (storedOTP == null) {
+//			System.out.println("OTP not found or expired in Redis");
+//			return false;
+//		}
+//
+//		if (storedOTP.equals(otp)) {
+//			System.out.println("OTP validation SUCCESS");
+//			// OTP validated successfully, delete it from Redis
+//			redisTemplate.delete(key);
+//			return true;
+//		}
+//
+//		System.out.println("OTP validation FAILED - mismatch");
+//		return false;
+//	}pk
+	
+	//pk remove latter
 	public boolean validateOTP(String email, String otp) {
-		String key = OTP_PREFIX + email;
-		String storedOTP = redisTemplate.opsForValue().get(key);
-
-		System.out.println("=== OTP VALIDATION ===");
-		System.out.println("Email: " + email);
-		System.out.println("Input OTP: " + otp);
-		System.out.println("Stored OTP: " + storedOTP);
-		System.out.println("Key: " + key);
-
-		if (storedOTP == null) {
-			System.out.println("OTP not found or expired in Redis");
-			return false;
-		}
-
-		if (storedOTP.equals(otp)) {
-			System.out.println("OTP validation SUCCESS");
-			// OTP validated successfully, delete it from Redis
-			redisTemplate.delete(key);
-			return true;
-		}
-
-		System.out.println("OTP validation FAILED - mismatch");
-		return false;
+	    return "123456".equals(otp);  // 🔥 Always checks against static OTP
 	}
+	//pk
+
 
 	public boolean isOTPExpired(String email) {
 		String key = OTP_PREFIX + email;
