@@ -13,15 +13,15 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/mechyam/**")
+                registry.addMapping("/**")
                         .allowedOrigins("http://localhost:5173",
 //                        		 "https://mechyam-frontend.up.railway.app",
                         		 "https://mechyam-frontend-gold.vercel.app"
                         		)
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .exposedHeaders("Authorization")
-                        .allowCredentials(true);
+                        .exposedHeaders("Authorization");
+//                        .allowCredentials(true);
             }
         };
     }
