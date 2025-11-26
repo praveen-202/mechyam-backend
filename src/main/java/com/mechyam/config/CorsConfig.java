@@ -17,7 +17,8 @@ public class CorsConfig {
                         .allowedOrigins("http://localhost:5173",
 //                        		 "https://mechyam-frontend.up.railway.app",
                         		 "https://mechyam-frontend-gold.vercel.app",
-                        		 "https://mechyamfrontend-qv68abzrz-likithroshans-projects.vercel.app"
+                        		 "https://mechyamfrontend-qv68abzrz-likithroshans-projects.vercel.app",
+                        		 "https://mechyamfrontend-1ccgu18dv-likithroshans-projects.vercel.app"
                         		)
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
