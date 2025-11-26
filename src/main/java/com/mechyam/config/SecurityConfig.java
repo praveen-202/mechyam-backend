@@ -60,7 +60,8 @@ public class SecurityConfig {
 //        config.setAllowedOrigins(List.of("http://localhost:5173"));
         config.setAllowedOrigins(List.of(
                 "http://localhost:5173",
-                "https://mechyam-frontend-gold.vercel.app"
+                "https://mechyam-frontend-gold.vercel.app",
+                "https://mechyamfrontend-qv68abzrz-likithroshans-projects.vercel.app"
         ));
 
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
